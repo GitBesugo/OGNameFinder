@@ -1,51 +1,51 @@
 # OGNameFinder
 
-Tool per trovare username Minecraft disponibili (OG names).
+Tool to find available Minecraft usernames (OG names).
 
-## Funzionamento
+## How it works
 
-Lo script genera nomi casuali usando la libreria `faker` e li controlla tramite l'API pubblica di Mojang. Se un nome restituisce errore 404, significa che il nome e' disponibile e viene salvato in `output.txt`.
+The script generates random words using the `faker` library and checks them via the Mojang public API. If a name returns a 404 error, it means the name is available and is saved to `output.txt`.
 
-## Requisiti
+## Requirements
 
 - Python 3.10+
-- venv gia' configurato (vedi `venv/`)
+- venv already configured (see `venv/`)
 
-## Installazione
+## Installation
 
 ```bash
-# Attiva il virtual environment
+# Activate the virtual environment
 .\venv\Scripts\activate.bat
 
-# Installa le dipendenze (se necessario)
+# Install dependencies (if needed)
 pip install -r requirements.txt
 ```
 
-## Utilizzo
+## Usage
 
 ```bash
 python main.py
 ```
 
-I nomi disponibili vengono salvati automaticamente in `output.txt`.
+Available names are automatically saved to `output.txt`.
 
 ## Output
 
-- `output.txt`: lista dei nomi Minecraft disponibili trovati
+- `output.txt`: list of available Minecraft names found
 
-## Lingua
+## Language
 
-Per cambiare la lingua delle parole generate, modifica il locale in `main.py`:
+To change the language of generated words, modify the locale in `main.py`:
 
 ```python
-fake = Faker(locale="it_IT")  # italiano
-fake = Faker(locale="en_US")  # inglese (default)
-fake = Faker(locale="fr_FR")  # francese
-fake = Faker(locale="de_DE")  # tedesco
+fake = Faker(locale="it_IT")  # Italian
+fake = Faker(locale="en_US")  # English (default)
+fake = Faker(locale="fr_FR")  # French
+fake = Faker(locale="de_DE")  # German
 ```
 
-## Note
+## Notes
 
-- Lo script ignora nomi con spazi, apostrafi o trattini
-- Lunghezza nomi: 4-15 caratteri
-- Include rate limiting automatico per evitare blocchi API
+- The script ignores names with spaces, apostrophes, or hyphens
+- Name length: 4-15 characters
+- Includes automatic rate limiting to avoid API blocks
